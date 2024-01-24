@@ -1,3 +1,28 @@
 <app-header>
-    <h1>Hello</h1>
+  <div class="container d-flex justify-center align-center">
+    <!-- Dólar Canadense -->
+    <app-card
+      [currency]="dolarCanadense"
+      [hasError]="hasErrorDolar"
+      [isLoading]="isLoadingDolar"
+      code="CAD-BRL"
+      (refresh)="searchAndDisplayCanada($event)"
+    ></app-card>
+    <!-- Peso Argentino -->
+    <app-card
+      [currency]="pesoArgentino"
+      [hasError]="hasErrorPeso"
+      [isLoading]="isLoadingPeso"
+      code="ARS-BRL"
+      (refresh)="searchAndDisplayArgentina($event)"
+    ></app-card>
+    <!-- Libra Esterlina -->
+    <app-card
+      [currency]="libraEsterlina"
+      [hasError]="hasErrorLibra"
+      [isLoading]="isLoadingLibra"
+      code="GBP-BRL"
+      (refresh)="searchAndDisplayGPB($event)"
+    ></app-card>
+  </div>
 </app-header>

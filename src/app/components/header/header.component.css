@@ -1,0 +1,8 @@
+header{
+    padding: 20px;
+    background: var(--header-primary);
+}
+
+header > nav > ul > li > img{
+    max-width: 200px;
+}

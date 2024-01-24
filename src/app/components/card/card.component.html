@@ -1,1 +1,41 @@
-<p>card works!</p>
+<div class="card d-flex space-between align-center flex-column">
+  <header class="card-header">
+    <h1 class="title-header">{{ currency?.name }}</h1>
+  </header>
+  <div
+    class="card-content"
+    *ngIf="!isLoading && !hasError; else loadingOrError"
+  >
+    <h2 [ngClass]="getClassForValue(currency?.bid)">
+      {{ (currency?.bid | currency : "BRL")?.replace(".", ",") }}
+    </h2>
+  </div>
+  <div class="card-footer" *ngIf="!isLoading && !hasError">
+    <div class="info-section">
+      <h4>Variação (%)</h4>
+      <p>{{ currency?.pctChange | percent }}</p>
+    </div>
+    <div class="info-section">
+      <h4>Atualizado</h4>
+      <p>{{ currency?.timestamp | date : "HH:mm:ss" }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingOrError>
+  <ng-container *ngIf="isLoading; else error">
+    <div class="d-flex justify-center h-100">
+      <img
+        src="../../../assets/icons/loader.svg"
+        alt="Imagem representando um loading referindo ao carregamento de informações."
+      />
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #error>
+  <div class="d-flex space-evenly align-center h-100 flex-column">
+    <h3 class="title-error">Algo deu errado.</h3>
+    <button class="button-refresh" (click)="emitEvent()">Recarregar</button>
+  </div>
+</ng-template>

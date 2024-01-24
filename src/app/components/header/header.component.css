@@ -1,8 +1,12 @@
-header{
-    padding: 20px;
-    background: var(--header-primary);
+header {
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: var(--header-primary);
 }
 
-header > nav > ul > li > img{
-    max-width: 200px;
+header > nav > ul > li > img {
+  max-width: 200px;
 }

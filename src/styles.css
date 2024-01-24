@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+:root{
+    --color-success: #3C7649;
+    --color-info: #3684CB;
+    --color-error: #DD4B4B;
+    --text-primary: #717171;
+    --text-secondary: #919191;
+    --button-primary: #F4F4F4;
+    --card-primary: #FFF;
+    --card-header: #F6F6F6;
+    --header-primary: #FFF;
+    --background-primary: #EEE;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: var(--background-primary);
+}
+
+.d-flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.align-center{
+    align-items: center;
+}
